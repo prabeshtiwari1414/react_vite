@@ -1,0 +1,5 @@
+@import "tailwindcss";
+.glow-text {
+  color: #fff;
+  text-shadow: 0 0 10px #fcfcfc, 0 0;
+}
