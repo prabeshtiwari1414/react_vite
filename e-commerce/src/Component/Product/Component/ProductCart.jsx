@@ -1,14 +1,15 @@
 import React from "react";
 import AddTocart from "../../Buttons/AddTocart";
+import StarCal from "./StarCal";
 
 const ProductCart = ({ data }) => {
   return (
-    <div className=" flex flex-col w-64 border border-gray-300 rounded-xl overflow-hidden bg-slate-100 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-black/50">
+    <div className=" flex flex-col w-74 border border-gray-300 rounded-xl overflow-hidden bg-slate-100 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-black/50">
       <div>
         <img
           src={data.image}
           alt={data.name}
-          className="w-64 h-64 object-cover rounded-lg mb-4"
+          className="w-74 h-64 object-cover rounded-lg mb-4"
         />
       </div>
       <div className="p-3">
@@ -16,11 +17,13 @@ const ProductCart = ({ data }) => {
           <p className="text-gray-500  mb-2">{data.category}</p>
         </div>
         <div className="flex  justify-between items-center">
-          <h2 className="text-2xl font-semibold mb-2">{data.name}</h2>
-          <p className="text-gray-600 mb-2"> {data.rating} ★</p>
+          <h2 className="text-2xl font-semibold mb-2 w-[40]">{data.name}</h2>
+          <div>
+            <StarCal rating={Number(data.rating)} />
+          </div>
         </div>
         <div className="flex justify-between items-center">
-          <AddTocart className=" " />
+          <AddTocart data={data} />
           <p className="text-orange-500 text-lg font-bold"> ${data.price}</p>
         </div>
       </div>
